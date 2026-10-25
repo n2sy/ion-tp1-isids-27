@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <style>
+      .category-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 12px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-title>Gestionnaire de dépenses</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Nouvelle dépense</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                  <ion-input
+                    id="intitule"
+                    label="Intitulé"
+                    type="text"
+                  ></ion-input>
+                  <ion-input
+                    id="montant"
+                    label="Montant"
+                    type="number"
+                  ></ion-input>
+                  <ion-select
+                    id="categorie"
+                    label="Catégorie"
+                    placeholder="Selectionnez une catégorie"
+                  >
+                    <ion-select-option value="alimentation"
+                      >🍽️ Alimentation</ion-select-option
+                    >
+                    <ion-select-option value="transport"
+                      >🚗 Transport</ion-select-option
+                    >
+                    <ion-select-option value="loisirs"
+                      >🎮 Loisirs</ion-select-option
+                    >
+                    <ion-select-option value="sante"
+                      >⚕️ Santé</ion-select-option
+                    >
+                    <ion-select-option value="education"
+                      >📚 Éducation</ion-select-option
+                    >
+                    <ion-select-option value="autres"
+                      >📦 Autres</ion-select-option
+                    >
+                  </ion-select>
+                  <div class="ion-text-end ion-margin-top">
+                    <ion-button id="btn-add" color="success" fill="outline"
+                      ><ion-icon slot="start" name="add-outline"></ion-icon
+                      >Ajouter</ion-button
+                    >
+                    <ion-button id="btn-erase" color="danger" fill="outline"
+                      ><ion-icon name="close-outline" slot="end"></ion-icon
+                      >Effacer</ion-button
+                    >
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-list id="dep-list">
+                <ion-item>
+                  <ion-badge class="category-badge" color="medium"
+                    >🧳 Aucune dépense</ion-badge
+                  >
+                  <ion-label>0 dépense enregistrée</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <h4>
+                Total des dépenses :
+                <span id="total-dep">...</span>
+              </h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-app>
+    <script src="script.js"></script>
+  </body>
+</html>
